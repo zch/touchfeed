@@ -1,0 +1,65 @@
+@import "fontawesome/font-awesome.min.css";
+
+.v-touchkit-navbar .v-button.iconbutton {
+    font-size: 1.5em;
+    border: none;
+    -webkit-box-shadow: none;
+    width: 66px;
+    color: #52555a;
+}
+.v-button.iconbutton .v-button-wrap,
+.v-button.iconbutton .v-button-caption {
+    background: none;
+}
+
+.v-label.no-blogs-label {
+    text-align: center;
+}
+
+.v-csslayout.new-blog {
+    background: none;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.new-blog .new-blog-url {
+    display: block;
+    width: 100%;
+}
+
+.v-csslayout.entry-content {
+    padding: 10px;
+}
+.v-label.entry-content {
+    background: white;
+    padding: 0px 10px;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+}
+
+.v-link.open-external-link a span {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.5em;
+    padding: 0 20px;
+    color: #52555a;
+}
+.v-link.open-external-link a span:before {
+    /* icon-external-link from FontAwesome */
+    content: "\f08e";
+}
+
+.v-touchkit-navbutton .v-touchkit-navbutton-desc {
+    background-color: #73787c;
+    color: #f8f8f8;
+    font-weight: bold;
+    line-height: 1;
+    border-radius: 1em;
+    padding: 5px 10px;
+    margin-top: 8px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9);
+}
