@@ -7,20 +7,23 @@ import com.vaadin.demo.touchfeed.domain.Blog;
 import com.vaadin.demo.touchfeed.events.BlogAddedEvent;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CssLayout;
-import com.vaadin.ui.Panel;
 
+/**
+ * A popover that handles adding and persisting of a new blog.
+ */
 public class NewBlogPopover extends Popover {
 
     private final UrlField urlField = new UrlField();
     private final Button cancelButton = new Button("Cancel");
     private final Button addButton = new Button("Add");
 
+    /**
+     * Constructs the popover fields and layout.
+     */
     public NewBlogPopover() {
-        Panel p = new Panel();
         CssLayout layout = new CssLayout();
         layout.setStyleName("new-blog");
-        p.setContent(layout);
-        setContent(p);
+        setContent(layout);
 
         urlField.setStyleName("new-blog-url");
         urlField.setValue("http://");
@@ -46,6 +49,10 @@ public class NewBlogPopover extends Popover {
         urlField.focus();
     }
 
+    /**
+     * Called when the add button is touched. Creates a new blog and persists it
+     * and then fires the BlogAddedEvent.
+     */
     private void addBlogAndClose() {
         Blog blog = new Blog();
         blog.setUrl(urlField.getValue());

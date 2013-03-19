@@ -1,12 +1,12 @@
 <module>
     <!-- WS Compiler: manually edited -->
 
-	<!-- Inherit DefaultWidgetSet -->
-    <inherits name="com.vaadin.DefaultWidgetSet" />
-	<inherits name="com.vaadin.addon.touchkit.gwt.TouchKitWidgetSet" />
+    <!-- Inherit DefaultWidgetSet and TouchKitWidgetSet -->
+    <inherits name="com.vaadin.DefaultWidgetSet"/>
+    <inherits name="com.vaadin.addon.touchkit.gwt.TouchKitWidgetSet"/>
 
+    <!-- also cache the theme in the application cache -->
     <set-configuration-property
             name='touchkit.manifestlinker.additionalCacheRoot'
-            value='src/main/webapp/VAADIN/themes/touchfeed:../../../VAADIN/themes/touchfeed' />
-
+            value='src/main/webapp/VAADIN/themes/touchfeed:../../../VAADIN/themes/touchfeed'/>
 </module>

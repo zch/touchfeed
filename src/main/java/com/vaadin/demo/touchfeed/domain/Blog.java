@@ -16,13 +16,20 @@ import com.sun.syndication.feed.synd.SyndFeed;
 import com.sun.syndication.io.SyndFeedInput;
 import com.sun.syndication.io.XmlReader;
 
+/**
+ * A simple entity holding the URL for registered blogs. This class also uses
+ * ROME to parse the RSS/Atom feed.
+ */
 @Entity
 public class Blog {
     @Id
     @GeneratedValue
     private Long id;
+
+    /** The URL of the blog */
     private String url;
 
+    /** The parsed feed */
     @Transient
     private SyndFeed feed;
 
@@ -42,6 +49,12 @@ public class Blog {
         this.id = id;
     }
 
+    /**
+     * Parses the feed at the URL returned by {@link #getUrl()} and returns the
+     * parsed result.
+     * 
+     * @return the parsed feed.
+     */
     @Transient
     public SyndFeed getFeed() {
         if (feed == null) {
@@ -55,6 +68,9 @@ public class Blog {
         return feed;
     }
 
+    /**
+     * Stores the Blog instance.
+     */
     public void store() {
         EntityManager em = JPAUtil.getEntityManager();
         em.getTransaction().begin();
@@ -71,11 +87,17 @@ public class Blog {
         }
     }
 
+    /**
+     * @return A list of the entries in the RSS/Atom feed.
+     */
     @Transient
     public List<SyndEntry> getEntries() {
         return getFeed().getEntries();
     }
 
+    /**
+     * @return A list of all stored blogs
+     */
     public static List<Blog> findAll() {
         EntityManager em = JPAUtil.getEntityManager();
         em.getTransaction().begin();

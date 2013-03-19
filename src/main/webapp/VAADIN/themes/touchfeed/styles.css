@@ -1,5 +1,11 @@
 @import "fontawesome/font-awesome.min.css";
 
+/*
+ * Buttons with the iconbutton style:
+ * - Hide the button decorations
+ * - Increase the font size
+ * - Increase the width
+ */
 .v-touchkit-navbar .v-button.iconbutton {
     font-size: 1.5em;
     border: none;
@@ -7,15 +13,18 @@
     width: 66px;
     color: #52555a;
 }
+
 .v-button.iconbutton .v-button-wrap,
 .v-button.iconbutton .v-button-caption {
     background: none;
 }
 
+/* Center the text on the "no blogs added" label */
 .v-label.no-blogs-label {
     text-align: center;
 }
 
+/* Margins and paddings for the new blog popover */
 .v-csslayout.new-blog {
     background: none;
     margin: 5px;
@@ -23,14 +32,18 @@
     padding: 10px;
 }
 
+/* To make the URL field in the new blog popover push the "cancel" and "add" buttons below it. */
 .new-blog .new-blog-url {
     display: block;
     width: 100%;
 }
 
+/* Padding on the entry view (article view) */
 .v-csslayout.entry-content {
     padding: 10px;
 }
+
+/* Style the content label on the entry view (article view) to look like the other views in the app */
 .v-label.entry-content {
     background: white;
     padding: 0px 10px;
@@ -38,6 +51,13 @@
     border-radius: 10px;
 }
 
+/*
+ * Styling for the external link.
+ * - Rules copied from Font-Awesome css.
+ * - Increased font size to match the iconbutton style
+ * - Added padding to increase the size of the touch target
+ * - Use the same color as the navigation view caption
+ */
 .v-link.open-external-link a span {
     font-family: FontAwesome;
     font-weight: normal;
@@ -48,11 +68,13 @@
     padding: 0 20px;
     color: #52555a;
 }
+
+/* icon-external-link copied from Font-Awesome css. */
 .v-link.open-external-link a span:before {
-    /* icon-external-link from FontAwesome */
     content: "\f08e";
 }
 
+/* Style the "unread count badges" */
 .v-touchkit-navbutton .v-touchkit-navbutton-desc {
     background-color: #73787c;
     color: #f8f8f8;
